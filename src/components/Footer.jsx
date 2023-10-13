@@ -5,7 +5,8 @@ import { faTwitter, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-
 function Footer() {
   return (
     <footer className="footer">
-      <section className="footer-container">     
+      <section className="footer-container">   
+        
         <div>
           <a href="#" className="brand-sm"> 
             <FontAwesomeIcon icon={faRobot} />
@@ -27,9 +28,11 @@ function Footer() {
             <FontAwesomeIcon icon={faGithub} className="social-icons" />
           </a>
         </div>
+        
         <div className="dev">
           <a href="https://https://github.com/JenniferSieber" className="dev-link" target="_blank">created by: Jennifer Sieber &copy;2023</a>
         </div> 
+        
       </section>
     </footer>
   )
