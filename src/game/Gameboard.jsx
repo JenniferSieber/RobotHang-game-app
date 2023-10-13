@@ -8,8 +8,7 @@ const HEAD = (
 )
 
 const BODY = (
-  <div className="robot body-middle"
-  > AI </div>
+  <div className="robot body-middle" />
 )
 
 const RIGHT_ARM = (
