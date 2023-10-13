@@ -1,15 +1,12 @@
 export default function AlienWord({ 
     guessedLetters, 
     wordToGuess, 
-    reveal=false }) 
-  {
-    console.log(wordToGuess, guessedLetters)
+    reveal=false }) {
   return (
     <div className="word-container">
       
-      { wordToGuess.split('').map((letter, index) => (
-        
-         <span style={{ borderBottom: ".1em solid black" }} key={index}>
+      { wordToGuess.split('').map((letter, index) => (     
+        <span style={{ borderBottom: ".1em solid black" }} key={index}>
          <span
            style={{
              visibility:
@@ -24,6 +21,7 @@ export default function AlienWord({
          </span>
        </span>
       ))}
+        
     </div>
   )
 }
