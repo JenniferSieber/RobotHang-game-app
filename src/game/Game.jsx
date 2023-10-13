@@ -1,4 +1,3 @@
-
 import { useCallback, useEffect, useState } from "react"
 import Gameboard from './Gameboard'
 import GameKeyboard from './Keyboard'
@@ -9,7 +8,6 @@ import { faSync } from '@fortawesome/free-solid-svg-icons';
 
 function getWord() {
   const word = words[Math.floor(Math.random() * words.length)]
-  console.log(word)
   return word
 }
 
@@ -18,45 +16,43 @@ function Game() {
   const [guessedLetters, setGuessedLetters] = useState([])
 
 
-const incorrectLetters = guessedLetters.filter(
-    letter => !wordToGuess.includes(letter)
-  )
+  const incorrectLetters = guessedLetters.filter(
+      letter => !wordToGuess.includes(letter)
+    )
 
-const isLoser = incorrectLetters.length >= 7
+  const isLoser = incorrectLetters.length >= 7
 
-const isWinner = wordToGuess  
+  const isWinner = wordToGuess  
       .split('')
       .every(letter => guessedLetters.includes(letter))
  
-const addGuessedLetter = useCallback((letter) => {
-    if (!guessedLetters.includes(letter) && !isLoser && !isWinner) {
-      setGuessedLetters((currentLetters) => [...currentLetters, letter]);
-    }
-  }, [guessedLetters, isWinner, isLoser]);
+  const addGuessedLetter = useCallback((letter) => {
+      if (!guessedLetters.includes(letter) && !isLoser && !isWinner) {
+        setGuessedLetters((currentLetters) => [...currentLetters, letter]);
+      }
+    }, [guessedLetters, isWinner, isLoser]);
   
-const handleButtonClick = (e) => {
-    console.log(`Button "${e.target.innerText}" clicked.`);
-    setGuessedLetters([])
+  const handleButtonClick = (e) => {
+      console.log(`Button "${e.target.innerText}" clicked.`);
+      setGuessedLetters([])
       setWordToGuess(getWord())
-}
+    }
 
-const handleDocumentClick = (e) => {
+  const handleDocumentClick = (e) => {
     if(e.target.tagname !== 'BUTTON') {
       console.log('Clicked outside of buttons')
-    }
-}
+      }
+  }
 
 // useEffects
 useEffect(() => {
     const handler = (e) => {
       const key = e.key
       if (!key.match(/^[a-z]$/)) return
-      console.log('click')
       e.preventDefault()
       addGuessedLetter(key)
     }
-    document.addEventListener('keypress', handler)
-  
+    document.addEventListener('keypress', handler)  
     return () => {
       document.removeEventListener('keypress', handler)
     }
@@ -66,13 +62,11 @@ useEffect(() => {
     const handler = (e) => {
       const key= e.key
       if (key !== "Enter") return
-
       e.preventDefault()
       setGuessedLetters([])
       setWordToGuess(getWord())
     }
     document.addEventListener('keypress', handler)
-
     return () => {
       document.removeEventListener('keypress', handler)
     }
@@ -80,7 +74,6 @@ useEffect(() => {
 
 useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
-
     return () => {
       document.removeEventListener('click', handleDocumentClick);
     };
@@ -112,11 +105,12 @@ useEffect(() => {
     <div className="word-components">
       <div className="robotword">
         <AlienWord
-        reveal={isLoser}
-        guessedLetters={guessedLetters}
-        wordToGuess={wordToGuess} 
-      />
+          reveal={isLoser}
+          guessedLetters={guessedLetters}
+          wordToGuess={wordToGuess} 
+        />
       </div>
+      
       <div className="keypboard-display">
         <GameKeyboard 
           disabled={isWinner || isLoser}
