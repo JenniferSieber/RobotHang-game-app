@@ -39,26 +39,6 @@ export default function GameKeyboard({
   return (
     <div className="keyboard-container">
       <div className="key">
-      {/* {
-        KEYS.map(key => {
-          const isActive = activeLetters.includes(key)
-          const isInactive = inactiveLetters.includes(key) 
-          
-          return (
-            <button 
-              onClick={() => addGuessedLetter(key)}
-              className={`${styles.btn} ${isActive ? styles.active : ""} ${
-                isInactive ? styles.inactive : ""
-                }`
-              }
-              disabled={isInactive || isActive || disabled}
-              key={key} 
-            >
-              {key}
-            </button>
-          )
-        })} */}
-      </div>
       {
         KEYS.map(key => {
           const isActive = activeLetters.includes(key)
@@ -78,6 +58,7 @@ export default function GameKeyboard({
             </button>
           )
         })}
+        </div>
     </div>
   )
 }
