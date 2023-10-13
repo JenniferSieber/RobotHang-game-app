@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: monospace, sans-serif;
+  font-size: 67.5%;
+  background: radial-gradient(circle, rgb(187, 221, 241), rgb(2, 79, 117));
+  height: 100vh; 
+  margin: 0;
+}
+
+.app-container {
+  display: flex; 
+  flex-direction: column; 
+  height: 100%; 
+}
+
+/* Main Gameboard styles */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+}
+
+.game-components {
+  display: flex;
+}
+
+.msg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.status-msg {
+  padding-top: 20px;
+  font-size: 3rem;
+  color: black;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+button {
+  border-radius: 100%;
+  border: purple 1px solid;
+}
+
+button:hover {
+  background: rgb(238, 172, 238);
+  cursor: pointer;
+  color: rgb(156, 4, 156);
+}
+
+.fa-icon {
+  color: purple;
+  font-size: 4rem;
+  padding: 1rem;
+}
+
+.game-pieces-container {
+  width: 400px;
+}
+
+.word-components {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Navbar Styles */
+.nav-container {
+  background: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand {
+  background: purple;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem 1.5rem;
+  font-size: 2.5rem;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 2rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.links a {
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  color: white;
+}
+
+.links a:hover,
+a:hover {
+  color: rgb(238, 172, 238);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Footer Styles */
+.footer-container {
+  flex: 1; /* takes the remaining height of the "container" div */
+  overflow: auto; /* to scroll just the "main" div */
+}
+
+.footer-container {
+  background: #222;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-sm {
+  font-size: 2rem;
+  color: lightskyblue;
+}
+
+.dev-link {
+  font-size: 1rem;
+  color: white;
+}
+
+.social-icons {
+  font-size: 2rem;
+  margin-top: 10px;
+  padding-right: 20px;
+}
+
+.social-icons:hover {
+  color: rgb(238, 172, 238);
+}
+
+/* Gameboard hangman styles */
+.game-pieces-container {
+  position: relative;
+}
+.piece {
+  background: black;
+}
+
+.hook {
+  height: 50px;
+  width: 10px;
+  position: absolute;
+  top:0;
+  right: 100px;
+}
+
+.arm {
+  margin-left: 100px;
+  width: 190px;
+  height: 10px;
+}
+
+.stand {
+  height: 370px;
+  width: 10px;
+  margin-left: 100px;
+}
+
+.base {
+  bottom: 0;
+  width: 220px;
+  height: 10px;
+}
+
+/* Body Parts Render Style */
+.robot {
+  background: rgb(156, 4, 156);
+  position: absolute;
+}
+
+.body-head {
+  color: rgb(156, 4, 156);
+  position: absolute;
+  top: 55px;
+  right: 68px;
+}
+
+.head-icon {
+  font-size: 60px;
+}
+
+.body-middle {
+  width: 45px;
+  height: 90px;
+  top: 118px;
+  right: 84px;
+  border-radius: 20%;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.limb {
+  width: 50px;
+  height: 15px;
+  border-radius: 40%;
+}
+
+.body-left-arm {
+  top: 150px;
+  right: 133px;
+  rotate: 30deg;
+  transform-origin: right bottom;  
+}
+
+.body-right-arm {
+  top: 150px;
+  right: 30px;
+  rotate: -30deg;
+  transform-origin: left bottom;
+}
+
+.body-left-leg {
+  top: 190px;
+  right: 110px;
+  rotate: -80deg;
+  transform-origin: right bottom;
+  width: 70px;
+}
+
+.body-right-leg {
+  top: 190px;
+  right: 30px;
+  rotate: 80deg;
+  transform-origin: left bottom;
+  width: 70px;
+}
+
+.body-leaf {
+  position: absolute;
+  top: 90px;
+  right: 160px;
+  rotate: -80deg;
+  color: rgb(74, 182, 74);
+  font-size: 40px;
+}
+
+/* Keyboard container */
+.keyboard-container {
+  padding-top: .75rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.word-container {
+  display: flex;
+  gap: .25rem;
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: "uppercase";
+}
+
+
+
