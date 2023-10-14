@@ -1,5 +1,10 @@
 # React + Vite RobotHang Game App 
+
+Written in Vanilla JavaScript with style in Vanilla CSS
+
 dependencies: react-fontawesome, dotenv
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
