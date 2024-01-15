@@ -6,7 +6,6 @@ function Navbar() {
   return (
     <header className="nav">
         <nav className='nav-container'>
-          
           <div className='brand'>
             <div>
               <FontAwesomeIcon icon={faRobot} />
